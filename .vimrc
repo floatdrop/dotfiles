@@ -25,7 +25,7 @@
     Bundle 'scrooloose/nerdtree'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
-    Bundle 'lokaltog/powerline'
+    Bundle 'bling/vim-airline'
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-dispatch'
     Bundle 'airblade/vim-gitgutter'
