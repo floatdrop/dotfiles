@@ -23,7 +23,6 @@
     Bundle 'motemen/git-vim'
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'sjl/badwolf'
-    Bundle 'tpope/vim-pathogen'
     Bundle 'scrooloose/nerdtree'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
@@ -140,7 +139,6 @@ let g:syntastic_javascript_checkers = ['jshint']
 " Launch Config {{{
 runtime! debian.vim
 set nocompatible
-call pathogen#infect()
 " }}}
 " Tmux {{{
 if exists('$TMUX') " allows cursor change in tmux mode
