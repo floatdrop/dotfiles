@@ -1,4 +1,50 @@
 " Douglas Black
+" Vundle {{{
+    let iCanHazVundle=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle..."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        let iCanHazVundle=0
+    endif
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+
+    "Add your bundles here
+    Bundle 'vim-scripts/taglist.vim'
+    Bundle 'Syntastic'
+    Bundle 'mileszs/ack.vim'
+    Bundle 'vim-scripts/a.vim'
+    Bundle 'motemen/git-vim'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'sjl/badwolf'
+    Bundle 'tpope/vim-pathogen'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'sjl/gundo.vim'
+    Bundle 'lokaltog/powerline'
+    Bundle 'tpope/vim-commentary'
+    Bundle 'tpope/vim-dispatch'
+    Bundle 'airblade/vim-gitgutter'
+    Bundle 'plasticboy/vim-markdown'
+    Bundle 'terryma/vim-multiple-cursors'
+    Bundle 'justinmk/vim-sneak'
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tomtom/tlib_vim'
+    Bundle 'garbas/vim-snipmate'
+    Bundle 'honza/vim-snippets'
+    Bundle 'scrooloose/snipmate-snippets'
+    Bundle 'tpope/vim-unimpaired'
+
+    if iCanHazVundle == 0
+        echo "Installing Bundles, please ignore key map error messages"
+        echo ""
+        :BundleInstall
+    endif
+" }}}
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme badwolf
@@ -135,28 +181,6 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunc
-
-function! RunTestFile()
-    if(&ft=='python')
-        exec ":!" . ". venv/bin/activate; nosetests " .bufname('%') . " --stop"
-    endif
-endfunction
-
-function! RunGoFile()
-    if(&ft=='go')
-        exec ":new|0read ! go run " . bufname('%')
-    endif
-endfunction
-
-function! RunTestsInFile()
-    if(&ft=='php')
-        :execute "!" . "/Users/dblack/pear/bin/phpunit -d memory_limit=512M -c /usr/local/twilio/src/php/tests/config.xml --bootstrap /usr/local/twilio/src/php/tests/bootstrap.php " . bufname('%') . ' \| grep -v Configuration \| egrep -v "^$" '
-    elseif(&ft=='go')
-        exec ":!gp test"
-    elseif(&ft=='python')
-        exec ":read !" . ". venv/bin/activate; nosetests " . bufname('%') 
-    endif
-endfunction
 
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
