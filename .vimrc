@@ -19,6 +19,8 @@
     Bundle 'marijnh/tern_for_vim'
     Bundle 'kien/ctrlp.vim'
     Bundle 'pangloss/vim-javascript'
+    Bundle 'jelera/vim-javascript-syntax'
+    Bundle 'nathanaelkane/vim-indent-guides'
     Bundle 'Syntastic'
     Bundle 'mileszs/ack.vim'
     Bundle 'vim-scripts/a.vim'
