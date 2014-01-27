@@ -25,7 +25,7 @@
     Bundle 'scrooloose/nerdtree'
     Bundle 'tpope/vim-fugitive'
     Bundle 'sjl/gundo.vim'
-    Bundle 'lokaltog/powerline'
+    Bundle 'bling/vim-airline'
     Bundle 'tpope/vim-commentary'
     Bundle 'tpope/vim-dispatch'
     Bundle 'airblade/vim-gitgutter'
@@ -115,11 +115,10 @@ nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y :w !pbcopy<CR><CR>
 inoremap jk <esc>
 " }}}
-" Powerline {{{
+" Airline {{{
 "set encoding=utf-8
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 set laststatus=2
 " }}}
 " CtrlP {{{
