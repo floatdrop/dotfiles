@@ -15,6 +15,8 @@
 
     "Add your bundles here
     Bundle 'vim-scripts/taglist.vim'
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'marijnh/tern_for_vim'
     Bundle 'kien/ctrlp.vim'
     Bundle 'pangloss/vim-javascript'
     Bundle 'Syntastic'
