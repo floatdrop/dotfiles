@@ -15,6 +15,7 @@
 
     "Add your bundles here
     Bundle 'vim-scripts/taglist.vim'
+    Bundle 'pangloss/vim-javascript'
     Bundle 'Syntastic'
     Bundle 'mileszs/ack.vim'
     Bundle 'vim-scripts/a.vim'
